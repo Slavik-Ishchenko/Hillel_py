@@ -1,5 +1,5 @@
 num = str(input())
-s = list()
+suma = 0
 for i in num:
-    s.append(int(i))
-print(sum(s))
+    suma += int(i)
+print(suma)
