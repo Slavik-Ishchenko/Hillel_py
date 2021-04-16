@@ -7,4 +7,3 @@ with open('acdc.json', 'r+') as file:
 for i in track:
     dur_of_track += int(i['duration'])
 print(timedelta(seconds=dur_of_track))
-                                                                                                                                   
