@@ -1,13 +1,11 @@
-def square_of_figure():
-    c = str(input("Введите тип фигуры: "))
-    a = int(input("Введите длину стороны 'A': "))
-    if c == 'Квадрат':
-        s = a ** 2
-        return s
-    if c == 'Треугольник':
-        h = int(input("Введите длину стороны 'H': "))
-        s = 0.5 * a * h
-        return s
+def area_square(a):
+    print(a ** 2)
 
 
-print(square_of_figure())
+def area_triangle(h, a):
+    print(int(0.5 * a * h))
+
+
+area_square()
+area_triangle()
+
