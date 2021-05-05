@@ -1,17 +1,22 @@
-n = int(input('Enter number: '))
-lst = list(map(int, input('Enter the list values separated by commas: ').split(',')))
+n = int(input('Enter the number of shifts: '))
+l_ = ['a', 'b', 'c', 'd', 'e', 'f']
 
 
-def move_list(number, ls):
+def shift_list_(number, ls):
     empty = []
-    if n <= 0:
-        for i in range(abs(n)):
-            empty.append(n)
-        print(lst+empty)
-    else:
-        for i in range(n):
-            empty.append(n)
-        print(empty+lst)
+    if number > 0:
+        if len(ls) > number > 0:
+            number = len(ls) - number
+            for i in reversed(ls[number:]):
+                empty.append(i)
+            for i in ls[:number]:
+                empty.append(i)
+    if number < 0:
+        for i in ls[abs(number):]:
+            empty.append(i)
+        for i in (ls[:abs(number)]):
+            empty.append(i)
+    return empty
 
 
-move_list(n, lst)
+print(shift_list_(n, l_))
