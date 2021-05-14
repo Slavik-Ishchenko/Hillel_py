@@ -18,21 +18,24 @@ class BankAccount:
         self.balance = self.balance + amount - (amount * 0.01)
         self.transactions.append(self.balance)
         self.transactions.append('deposit')
+        date = datetime.datetime.now().strftime("%d.%m.%Y")
+        self.transactions.append(date)
 
     def withdrawal_of_funds(self, amount):
         self.balance = self.balance - amount - (amount * 0.01)
         self.transactions.append(self.balance)
         self.transactions.append('withdrawal')
+        date = datetime.datetime.now().strftime("%d.%m.%Y")
+        self.transactions.append(date)
 
     def show_balance(self):
         return self.balance
 
     def show_transactions(self):
-        date = datetime.datetime.now().strftime("%d.%m.%Y")
-        self.transactions.append(date)
         return self.transactions
 
 
 b = BankAccount()
-b.deposit(100)
+b.deposit(1100)
+print(b.show_balance())
 print(b.show_transactions())
